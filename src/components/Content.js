@@ -1,13 +1,13 @@
 import React from "react";
 
-import Square from "../assets/img/square.png";
+import Square from "../assets/img/pnk.png";
 
 const Content = () => {
   return (
     <main>
       <section className="bg-image">
         <div className="container">
-          <img src={Square} alt="square" />
+          <img src={Square} alt="square" className="banner-square" />
           <div className="main-txt">
             <h1>
               Your online shop <br /> for houseplants <br /> and more!

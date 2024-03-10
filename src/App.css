@@ -75,8 +75,14 @@ main {
 .main-txt {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 250px;
   transform: translate(-50%, -50%);
+}
+
+.main-txt h1 {
+  font-size: 28px;
+  font-style: italic;
+  padding-bottom: 20px;
 }
 
 .bg-image {
@@ -150,6 +156,11 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 50px 0;
+}
+
+.banner-square {
+  max-width: 100%;
+  height: auto;
 }
 
 .about-txt {
@@ -275,9 +286,30 @@ main {
     font-size: 16px;
     padding: 8px 40px;
   }
+  .footer-content {
+    flex-direction: column;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-txt {
+    padding-left: 0;
+  }
+
+  .subscribe-txt {
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
+  .main-txt,
+  .banner-square {
+    display: none;
+  }
+
   .dotsImg {
     width: 80%;
     height: 100%;
