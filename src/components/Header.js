@@ -7,6 +7,10 @@ import User from "../assets/img/user.png";
 
 const Header = () => {
   const link = "";
+  const toggleMenu = () => {
+    const menu = document.querySelector(".navbar");
+    menu.classList.toggle("open");
+  };
 
   return (
     <header>
@@ -16,24 +20,29 @@ const Header = () => {
             <img src={Plant} alt="Plant Logo" />
             <h1>PLANTS</h1>
           </div>
-          <div>
+          <div className="hamburger-menu" onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className="navbar-links">
             <ul className="links-wrapper">
-              <li>
+              <li className="nav-list">
                 <a href={link} className="nav-link">
                   Houseplants
                 </a>
               </li>
-              <li>
+              <li className="nav-list">
                 <a href={link} className="nav-link">
                   Pots
                 </a>
               </li>
-              <li>
+              <li className="nav-list">
                 <a href={link} className="nav-link">
                   Care
                 </a>
               </li>
-              <li>
+              <li className="nav-list">
                 <a href={link} className="nav-link">
                   Accessories
                 </a>
@@ -41,7 +50,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-links">
-            <ul className="links-wrapper">
+            <ul className="links-wrapper-btn">
               <li>
                 <button className="nav-btn">
                   <img src={Heart} alt="heart" />
