@@ -1,23 +1,12 @@
 import React from "react";
-
-import Square from "../assets/img/pnk.png";
+import Searchbar from "./Searchbar";
 
 const Content = () => {
   return (
     <main>
       <section className="bg-image">
         <div className="container">
-          <img src={Square} alt="square" className="banner-square" />
-          <div className="main-txt">
-            <h1>
-              Your online shop <br /> for houseplants <br /> and more!
-            </h1>
-            <p>
-              It’s a place to learn how to become <br /> the best possible plant
-              parent <br />
-              and connect with other plant lovers
-            </p>
-          </div>
+          <Searchbar />
         </div>
       </section>
       <section>
