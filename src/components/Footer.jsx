@@ -13,22 +13,28 @@ const Footer = () => {
                 <img src={Plant} alt="Plant Logo" />
                 <h1>PLANTS</h1>
               </div>
-              <p className="footer-txt">Privacy Policy</p>
-              <p className="footer-txt">Terms & Conditions </p>
+              <div className="footer_link">
+                <a href="/" className="footer-txt">
+                  Overview
+                </a>
+                <a href="/" className="footer-txt">
+                  Privacy Policy
+                </a>
+                <a href="/" className="footer-txt">
+                  Terms & Conditions{" "}
+                </a>
+              </div>
             </div>
 
-            <div>
-              <p className="subscribe-txt">
-                Subscribe our newsletter to get <br /> updates about our
-                services
-              </p>
-              <div>
+            <div className="subscribe-wrapper">
+              <p className="subscribe-txt">Subscribe to get updates</p>
+              <div className="subscribe-buttons">
                 <form className="subscribe-form">
                   <input
                     type="email"
                     name="EMAIL"
                     id="newsletter-form-email"
-                    placeholder="Your email address"
+                    placeholder="Your email address ..."
                   />
 
                   <button type="submit" className="subscribe-btn">
