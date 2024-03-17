@@ -10,6 +10,7 @@ const plants = [
     name: "Snake Plant",
     description:
       "The Snake Plant, or Mother-in-Law's Tongue, is a popular indoor plant known for its air-purifying qualities and easy care.",
+    price: 400,
     image: Snake,
   },
   {
@@ -17,20 +18,15 @@ const plants = [
     name: "Pothos",
     description:
       "Pothos, also known as Devil's Ivy, is a versatile and easy-to-care-for trailing plant with heart-shaped leaves.",
+    price: 200,
     image: Pothos,
-  },
-  {
-    id: 3,
-    name: "Spider Plant",
-    description:
-      "Spider Plants are attractive and easy-to-grow houseplants, known for their arching leaves and air-purifying properties.",
-    image: Spider,
   },
   {
     id: 4,
     name: "ZZ Plant",
     description:
       "ZZ Plant, or Zamioculcas Zamiifolia, is a popular low-maintenance houseplant with glossy, dark green leaves.",
+    price: 350,
     image: ZZ,
   },
   {
@@ -38,6 +34,7 @@ const plants = [
     name: "Monstera",
     description:
       "Monstera, also known as the Swiss Cheese Plant, is a tropical plant with iconic split leaves, often grown as a houseplant.",
+    price: 800,
     image: Monstera,
   },
 ];

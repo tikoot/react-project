@@ -12,7 +12,7 @@ const Content = () => {
         </div>
       </section>
       <section>
-        <div className="container">
+        <div className="container products-container">
           <div className="products-grid">
             {plants.map((plant) => (
               <PlantCard

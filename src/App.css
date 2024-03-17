@@ -96,7 +96,7 @@ main {
 }
 
 .search-bar_wrapper {
-  padding: 50px 0 50px 0;
+  padding: 25px 0 25px 0;
 }
 
 .search-bar {
@@ -147,36 +147,38 @@ main {
   position: relative;
 }
 
+.footer_link {
+  margin-top: 20px;
+}
+
 .footer-txt {
-  padding-bottom: 20px;
-  padding-left: 8px;
+  margin-right: 20px;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 500;
-}
-
-.footer-txt:nth-child(2) {
-  padding-top: 20px;
+  text-decoration: none;
+  color: #000;
 }
 
 .subscribe-txt {
-  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-bottom: 20px;
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .subscribe-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .subscribe-form input {
   width: 100%;
+  min-width: 250px;
   padding: 10px 20px;
-  margin: 20px 0;
-  text-align: center;
+  margin-right: 20px;
   border: 1px solid #4b3049;
   color: #4b3049;
   border-radius: 20px;
@@ -199,11 +201,6 @@ main {
   width: 100%;
 }
 
-.about-btn {
-  font-size: 18px;
-  margin-top: 16px;
-}
-
 .content-inner {
   display: flex;
   align-items: center;
@@ -211,53 +208,52 @@ main {
   padding: 50px 0;
 }
 
-.about-txt {
-  font-size: 20px;
-  font-weight: 700;
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.plant {
+  border: 1px solid #ccc;
+  max-width: 332px;
+  background-color: #f4edf2;
+}
+
+.plant p {
   color: #4b3049;
-  padding-bottom: 10px;
 }
 
-.about-header {
-  font-size: 34px;
-  color: #b08ead;
-}
-
-.about-desc {
-  max-width: 550px;
-  color: #4b3049;
-  font-size: 18px;
-  padding: 16px 0;
-}
-
-.mainVideo {
-  width: 85%;
-  height: 450px;
-  margin: -30px 0 0 0;
-  border-radius: 10px;
-}
-
-.videoContainer {
-  width: 46%;
-  height: 600px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  padding: 0 0 0 10px;
-}
-
-.mainVideo {
-  z-index: 10;
-}
-
-.dotsImg {
-  position: absolute;
-  width: 80%;
-  height: 600px;
-  top: 0px;
-  right: 0px;
+.plant img {
+  max-width: 100%;
+  width: 100%;
   object-fit: cover;
+  height: 180px;
+}
+
+.plant-details {
+  padding: 12px;
+}
+
+.products-container {
+  padding-top: 50px;
+  max-width: 1130px;
+  display: flex;
+  margin: auto;
+}
+
+.plant-desc {
+  margin: 8px 0 8px 0;
+  font-size: 14px;
+}
+button {
+  color: #f4edf2;
+  background-color: #b08ead;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  padding: 9px 18px;
+  margin-top: 8px;
 }
 
 @media (max-width: 1124px) {
