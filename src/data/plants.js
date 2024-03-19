@@ -1,5 +1,4 @@
 import ZZ from "../assets/img/zz.webp";
-import Spider from "../assets/img/spider.webp";
 import Pothos from "../assets/img/pothos.webp";
 import Monstera from "../assets/img/monstera.webp";
 import Snake from "../assets/img/snake.webp";
