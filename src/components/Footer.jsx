@@ -1,5 +1,3 @@
-import React from "react";
-
 import Plant from "../assets/img/plant.png";
 
 const Footer = () => {

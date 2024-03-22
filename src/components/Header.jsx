@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import Plant from "../assets/img/plant.png";
 import Heart from "../assets/img/heart.png";
 import Cart from "../assets/img/cart.png";
@@ -27,6 +27,11 @@ const Header = () => {
           <div className="navbar-links">
             <ul className="links-wrapper">
               <li className="nav-list">
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-list">
                 <a href={link} className="nav-link">
                   Houseplants
                 </a>
@@ -42,9 +47,9 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-list">
-                <a href={link} className="nav-link">
-                  Accessories
-                </a>
+                <Link to="/contact" className="nav-link">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
