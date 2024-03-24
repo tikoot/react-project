@@ -1,5 +1,4 @@
 import ZZ from "../assets/img/zz.webp";
-import Spider from "../assets/img/spider.webp";
 import Pothos from "../assets/img/pothos.webp";
 import Monstera from "../assets/img/monstera.webp";
 import Snake from "../assets/img/snake.webp";
@@ -17,7 +16,7 @@ const plants = [
     id: 2,
     name: "Pothos",
     description:
-      "Pothos, also known as Devil's Ivy, is a versatile and easy-to-care-for trailing plant with heart-shaped leaves.",
+      "Pothos, also known as Devil's Ivy, is a versatile and easy to care for trailing  indoor plant with heart-shaped leaves.",
     price: 200,
     image: Pothos,
   },
