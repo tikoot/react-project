@@ -16,7 +16,7 @@ const plants = [
     id: 2,
     name: "Pothos",
     description:
-      "Pothos, also known as Devil's Ivy, is a versatile and easy-to-care-for trailing plant with heart-shaped leaves.",
+      "Pothos, also known as Devil's Ivy, is a versatile and easy to care for trailing  indoor plant with heart-shaped leaves.",
     price: 200,
     image: Pothos,
   },

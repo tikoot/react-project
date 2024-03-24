@@ -1,14 +1,15 @@
 const Searchbar = () => {
   return (
-    <div className="search-bar_wrapper">
-      <div className="search-bar">
+    <div className="py-4">
+      <div className="max-w-[790px] m-auto bg-[#f4edf2] py-[10px] pl-[32px] pr-[30px] text-lg text-[#666] rounded-[34px] flex items-center h-[60px]">
         <input
-          className="search-field"
+          className="text-[16px] text-[#333] bg-transparent border-transparent max-w-[790px] w-full outline-none "
           type="text"
           placeholder="Type to search..."
         />
-        <button className="search-btn" type="button">
+        <button type="button">
           <svg
+            className="fill-[#666] w-6 h-6 m-0"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"

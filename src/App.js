@@ -8,12 +8,14 @@ import Contact from "./pages/Contact";
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div className="flex flex-col h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 };
