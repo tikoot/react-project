@@ -73,20 +73,24 @@ const Header = () => {
           </div>
           <div>
             <ul className="flex items-center justify-between max-[900px]:hidden">
-              <li>
-                <button className="bg-transparent border-none cursor-pointer px-2">
+              <li className="pr-2">
+                <Link className="bg-transparent border-none cursor-pointer px-2">
                   <img src={Heart} alt="heart" className="w-6 h-6" />
-                </button>
+                </Link>
               </li>
-              <li>
-                <button className="bg-transparent border-none cursor-pointer px-2">
+              <li className="pr-2">
+                <Link className="bg-transparent border-none cursor-pointer px-2">
                   <img src={Cart} alt="cart" className="w-6 h-6" />
-                </button>
+                </Link>
               </li>
               <li>
-                <button className="bg-transparent border-none cursor-pointer px-2">
+                <Link
+                  to="/profile"
+                  className="bg-transparent border-none cursor-pointer px-2"
+                  linkto
+                >
                   <img src={User} alt="user" className="w-6 h-6" />
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
