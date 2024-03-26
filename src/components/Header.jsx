@@ -54,12 +54,12 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href={link}
+                <Link
+                  to="/blog"
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Care
-                </a>
+                  Blogs
+                </Link>
               </li>
               <li>
                 <Link
