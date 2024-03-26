@@ -55,7 +55,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
                   Blogs

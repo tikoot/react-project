@@ -3,18 +3,18 @@ import avatar from "../assets/img/avatar.png";
 const Profile = () => {
   return (
     <section className="flex flex-col h-screen overflow-y-auto">
-      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             src={avatar}
             alt="avatar"
-            class="h-[120px] w-auto rounded-full"
+            className="h-[120px] w-auto rounded-full"
           />
         </div>
 
-        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form class="space-y-6" action="#">
-            <div class="mt-2">
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <form className="space-y-6" action="#">
+            <div className="mt-2">
               <input
                 id="name"
                 name="name"
@@ -25,7 +25,7 @@ const Profile = () => {
               />
             </div>
 
-            <div class="mt-2">
+            <div className="mt-2">
               <input
                 id="lastname"
                 name="lastname"
@@ -36,7 +36,7 @@ const Profile = () => {
               />
             </div>
 
-            <div class="mt-2">
+            <div className="mt-2">
               <input
                 id="email"
                 name="email"
@@ -46,30 +46,30 @@ const Profile = () => {
                 style={{ "caret-color": "transparent" }}
               />
             </div>
-            <div class="mt-2">
+            <div className="mt-2">
               <input
                 id="password"
                 name="password"
                 type="password"
                 placeholder="New Password"
                 required
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
               />
             </div>
-            <div class="mt-2">
+            <div className="mt-2">
               <input
                 id="confirmPassword"
                 name="confirmPassword"
                 type="password"
                 placeholder="Confirm Password"
                 required
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
               />
             </div>
             <div>
               <button
                 type="submit"
-                class="flex w-full justify-center rounded-md bg-[#B08EAD] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm"
+                className="flex w-full justify-center rounded-md bg-[#B08EAD] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm"
               >
                 Save
               </button>
