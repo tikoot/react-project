@@ -18,6 +18,11 @@ const Profile = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <section className="flex flex-col h-screen overflow-y-auto">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -29,7 +34,7 @@ const Profile = () => {
           />
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="mt-2">
               <input
                 id="name"
