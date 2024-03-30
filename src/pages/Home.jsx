@@ -24,8 +24,21 @@ const Home = () => {
     }
   };
 
-  const handleSearch = (query) => {
+  const debounce = (func, delay) => {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
+  const debouncedHandleSearch = debounce((query) => {
+    console.log("Search:", query);
     setSearchQuery(query);
+  }, 300);
+
+  const handleSearch = (query) => {
+    debouncedHandleSearch(query);
   };
 
   const filteredData = () => {
