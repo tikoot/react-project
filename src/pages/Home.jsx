@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Home = () => {
   const [sortOrder, setSortOrder] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSortAsc = () => {
     if (sortOrder === "asc") {
@@ -23,13 +24,25 @@ const Home = () => {
     }
   };
 
-  const sortedData = () => {
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const filteredData = () => {
+    let filteredPlants = [...plants];
+
+    if (searchQuery.trim() !== "") {
+      filteredPlants = filteredPlants.filter((plant) =>
+        plant.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
     if (sortOrder === "asc") {
-      return [...plants].sort((a, b) => a.price - b.price);
+      return filteredPlants.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "desc") {
-      return [...plants].sort((a, b) => b.price - a.price);
+      return filteredPlants.sort((a, b) => b.price - a.price);
     } else {
-      return plants;
+      return filteredPlants;
     }
   };
 
@@ -37,13 +50,17 @@ const Home = () => {
     <main className="flex-grow overflow-y-auto">
       <section className="bg-cover bg-no-repeat bg-center relative">
         <div>
-          <Searchbar onSortAsc={handleSortAsc} onSortDesc={handleSortDesc} />
+          <Searchbar
+            onSortAsc={handleSortAsc}
+            onSortDesc={handleSortDesc}
+            onSearch={handleSearch}
+          />
         </div>
       </section>
       <section>
         <div className="flex items-center justify-center py-20">
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
-            {sortedData().map((plant) => (
+            {filteredData().map((plant) => (
               <PlantCard
                 key={plant.id}
                 name={plant.name}
