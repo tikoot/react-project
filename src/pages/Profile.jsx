@@ -10,6 +10,14 @@ const Profile = () => {
     confirmPassword: "",
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <section className="flex flex-col h-screen overflow-y-auto">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -63,6 +71,7 @@ const Profile = () => {
                 placeholder="New Password"
                 required
                 value={formData.password}
+                onChange={handleChange}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
               />
             </div>
@@ -74,6 +83,7 @@ const Profile = () => {
                 placeholder="Confirm Password"
                 required
                 value={formData.confirmPassword}
+                onChange={handleChange}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-2 sm:text-sm sm:leading-6"
               />
             </div>
