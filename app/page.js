@@ -1,12 +1,28 @@
 "use client";
-import { useState } from "react";
-import plants from "@/data/plants";
+import { useState, useEffect } from "react";
 import Searchbar from "@/components/SearchBar";
 import PlantCard from "@/components/PlantCard";
 
 export default function Home() {
   const [sortOrder, setSortOrder] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [plants, setPlants] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.products);
+        setPlants(data.products);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const handleSortAsc = () => {
     if (sortOrder === "asc") {
@@ -45,8 +61,10 @@ export default function Home() {
     let filteredPlants = [...plants];
 
     if (searchQuery.trim() !== "") {
-      filteredPlants = filteredPlants.filter((plant) =>
-        plant.name.toLowerCase().includes(searchQuery.toLowerCase())
+      filteredPlants = filteredPlants.filter(
+        (plant) =>
+          plant.name &&
+          plant.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
@@ -60,7 +78,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex-grow overflow-y-auto">
+    <div>
       <section className="bg-cover bg-no-repeat bg-center relative">
         <div>
           <Searchbar
@@ -71,20 +89,27 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="flex items-center justify-center py-20">
-          <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
-            {filteredData().map((plant) => (
-              <PlantCard
-                key={plant.id}
-                name={plant.name}
-                description={plant.description}
-                image={plant.image}
-                price={plant.price}
-              />
-            ))}
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="flex items-center justify-center py-20">
+            <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
+              {plants.length > 0 &&
+                filteredData().map((plant, index) => (
+                  <a key={index} href={`/product/${plant.id}`}>
+                    <PlantCard
+                      id={plant.id}
+                      name={plant.title}
+                      description={plant.description}
+                      image={plant.thumbnail}
+                      price={plant.price}
+                    />
+                  </a>
+                ))}
+            </div>
           </div>
-        </div>
+        )}
       </section>
-    </main>
+    </div>
   );
 }

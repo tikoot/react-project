@@ -27,13 +27,13 @@ const BlogPost = ({ key, title, description, image, date }) => {
           </h3>
           <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
             {description}
-            <a
-              href="/"
-              className="text-[#B08EAD] font-bold cursor-pointer ml-1 underline"
-            >
-              ...Read More
-            </a>
           </p>
+          <a
+            href="/"
+            className="text-[#B08EAD] font-bold cursor-pointer ml-1 underline"
+          >
+            ...Read More
+          </a>
         </div>
       </div>
     </article>
