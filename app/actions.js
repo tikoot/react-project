@@ -1,5 +1,6 @@
 import { AUTH_COOKIE_KEY } from "@/constants";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export async function login(username, password) {
   const response = await fetch("https://dummyjson.com/auth/login", {
