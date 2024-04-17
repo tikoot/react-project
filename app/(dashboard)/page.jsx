@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Searchbar from "@/components/SearchBar";
 import PlantCard from "@/components/PlantCard";
+import DashboardLayout from "./DashboardLayout";
 
 export default function Home() {
   const [sortOrder, setSortOrder] = useState(null);
@@ -78,38 +79,40 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <section className="bg-cover bg-no-repeat bg-center relative">
-        <div>
-          <Searchbar
-            onSortAsc={handleSortAsc}
-            onSortDesc={handleSortDesc}
-            onSearch={handleSearch}
-          />
-        </div>
-      </section>
-      <section>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <div className="flex items-center justify-center py-20">
-            <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
-              {plants.length > 0 &&
-                filteredData().map((plant, index) => (
-                  <a key={index} href={`/product/${plant.id}`}>
-                    <PlantCard
-                      id={plant.id}
-                      name={plant.title}
-                      description={plant.description}
-                      image={plant.thumbnail}
-                      price={plant.price}
-                    />
-                  </a>
-                ))}
-            </div>
+    <DashboardLayout>
+      <div>
+        <section className="bg-cover bg-no-repeat bg-center relative">
+          <div>
+            <Searchbar
+              onSortAsc={handleSortAsc}
+              onSortDesc={handleSortDesc}
+              onSearch={handleSearch}
+            />
           </div>
-        )}
-      </section>
-    </div>
+        </section>
+        <section>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="flex items-center justify-center py-20">
+              <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
+                {plants.length > 0 &&
+                  filteredData().map((plant, index) => (
+                    <a key={index} href={`/product/${plant.id}`}>
+                      <PlantCard
+                        id={plant.id}
+                        name={plant.title}
+                        description={plant.description}
+                        image={plant.thumbnail}
+                        price={plant.price}
+                      />
+                    </a>
+                  ))}
+              </div>
+            </div>
+          )}
+        </section>
+      </div>
+    </DashboardLayout>
   );
 }
