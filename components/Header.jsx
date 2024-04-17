@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import LogoutButton from "./LogoutButton";
 
 const Header = () => {
   const link = "";
@@ -83,19 +83,6 @@ const Header = () => {
                   className="bg-transparent border-none cursor-pointer px-2"
                 >
                   <Image
-                    src="/img/heart.png"
-                    alt="Plant Logo"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-              </li>
-              <li className="pr-2">
-                <Link
-                  href="/"
-                  className="bg-transparent border-none cursor-pointer px-2"
-                >
-                  <Image
                     src="/img/cart.png"
                     alt="Plant Logo"
                     width={24}
@@ -103,7 +90,7 @@ const Header = () => {
                   />
                 </Link>
               </li>
-              <li>
+              <li className="pr-2">
                 <Link
                   href="/profile"
                   className="bg-transparent border-none cursor-pointer px-2"
@@ -116,6 +103,9 @@ const Header = () => {
                     height={24}
                   />
                 </Link>
+              </li>
+              <li>
+                <LogoutButton />
               </li>
             </ul>
           </div>

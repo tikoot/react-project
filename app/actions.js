@@ -19,3 +19,7 @@ export async function login(username, password) {
   console.log(cookieStore);
   console.log(response);
 }
+
+// export async function deleteAuthCookie() {
+//   cookies().delete("auth");
+// }
