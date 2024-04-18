@@ -11,7 +11,7 @@ export default function Header() {
   const handleLogout = async () => {
     "use server";
     await logout();
-    // redirect("/login");
+    redirect("/login");
   };
 
   return (

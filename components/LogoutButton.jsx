@@ -5,7 +5,7 @@ export default function LogoutButton({ handleLogout }) {
   return (
     <button
       className="bg-transparent border-none cursor-pointer mt-1"
-      onClick={(e) => {
+      onClick={() => {
         e.preventDefault();
         handleLogout();
       }}
