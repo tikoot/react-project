@@ -1,13 +1,17 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import LogoutButton from "./LogoutButton";
+import ToggleMenu from "./ToggleMenu";
+import { logout } from "@/app/actions";
+import { redirect } from "next/navigation";
 
-const Header = () => {
+export default function Header() {
   const link = "";
-  const toggleMenu = () => {
-    const menu = document.querySelector(".navbar");
-    menu.classList.toggle("open");
+
+  const handleLogout = async () => {
+    "use server";
+    await logout();
+    // redirect("/login");
   };
 
   return (
@@ -23,14 +27,8 @@ const Header = () => {
             />
             <h1 className="font-bold text-2xl ml-1  text-[#4b3049]">PLANTS</h1>
           </div>
-          <div
-            className="hidden absolute max-[900px]:flex flex-col justify-between w-9 h-8 right-[75px] max-[900px]:right-6"
-            onClick={toggleMenu}
-          >
-            <span className="h-[6px] w-full bg-[#4b3049] rounded-md"></span>
-            <span className="h-[6px] w-full bg-[#4b3049] rounded-md"></span>
-            <span className="h-[6px] w-full bg-[#4b3049] rounded-md"></span>
-          </div>
+          <ToggleMenu />
+
           <div>
             <ul className="flex items-center justify-between max-[900px]:hidden">
               <li>
@@ -105,7 +103,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <LogoutButton />
+                <LogoutButton handleLogout={handleLogout} />
               </li>
             </ul>
           </div>
@@ -113,6 +111,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

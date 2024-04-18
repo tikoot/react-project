@@ -12,6 +12,7 @@ export default function DashboardLayout({ children }) {
   if (!cookie) {
     redirect("/login");
   }
+
   return (
     <div class="h-screen flex flex-col">
       <Header />

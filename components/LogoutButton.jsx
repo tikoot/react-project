@@ -1,22 +1,16 @@
-// import { deleteAuthCookie } from "@/app/actions";
-// import { redirect } from "next/navigation";
+"use client";
 import Image from "next/image";
 
-const LogoutButton = () => {
-  // const handleLogout = async () => {
-  //   try {
-  //     await deleteAuthCookie();
-  //     redirect("/");
-  //   } catch (error) {
-  //     console.error("Failed to sign out:", error);
-  //   }
-  // };
-
+export default function LogoutButton({ handleLogout }) {
   return (
-    <button className="bg-transparent border-none cursor-pointer mt-1">
+    <button
+      className="bg-transparent border-none cursor-pointer mt-1"
+      onClick={(e) => {
+        e.preventDefault();
+        handleLogout();
+      }}
+    >
       <Image src="/img/log-out.png" alt="Logout" width={24} height={24} />
     </button>
   );
-};
-
-export default LogoutButton;
+}
