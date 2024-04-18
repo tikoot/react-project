@@ -3,7 +3,6 @@ import { AUTH_COOKIE_KEY } from "@/constants";
 import { redirect } from "next/navigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { logout } from "@/app/actions";
 
 export default function DashboardLayout({ children }) {
   const cookieStore = cookies();
@@ -13,15 +12,9 @@ export default function DashboardLayout({ children }) {
     redirect("/login");
   }
 
-  const handleLogout = async () => {
-    "use server";
-    await logout();
-    redirect("/login");
-  };
-
   return (
     <div class="h-screen flex flex-col">
-      <Header handleLogout={handleLogout} />
+      <Header />
       <main class="flex-1 overflow-auto p-4">{children}</main>
       <Footer />
     </div>

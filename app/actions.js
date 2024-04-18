@@ -1,3 +1,4 @@
+"use server";
 import { AUTH_COOKIE_KEY } from "@/constants";
 import { cookies } from "next/headers";
 
@@ -17,5 +18,6 @@ export async function login(username, password) {
 }
 
 export async function logout() {
-  cookies().delete("auth");
+  const cookieStore = cookies();
+  cookieStore.delete(AUTH_COOKIE_KEY);
 }

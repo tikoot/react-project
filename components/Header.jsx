@@ -1,11 +1,16 @@
-"use client";
+"use server";
 import Link from "next/link";
 import Image from "next/image";
 import ToggleMenu from "./ToggleMenu";
+import { logout } from "@/app/actions";
+import LogoutButton from "./LogoutButton";
 
-export default function Header({ handleLogout }) {
+const Header = async () => {
   const link = "";
-
+  const handleLogout = async () => {
+    "use server";
+    await logout();
+  };
   return (
     <header className="bg-[#f4edf2] ">
       <div className="px-16 max-[900px]:px-6">
@@ -95,20 +100,7 @@ export default function Header({ handleLogout }) {
                 </Link>
               </li>
               <li>
-                <button
-                  className="bg-transparent border-none cursor-pointer mt-1"
-                  onClick={(e) => {
-                    e.preventDefault;
-                    handleLogout();
-                  }}
-                >
-                  <Image
-                    src="/img/log-out.png"
-                    alt="Logout"
-                    width={24}
-                    height={24}
-                  />
-                </button>
+                <LogoutButton handleLogout={handleLogout} />
               </li>
             </ul>
           </div>
@@ -116,4 +108,5 @@ export default function Header({ handleLogout }) {
       </div>
     </header>
   );
-}
+};
+export default Header;
