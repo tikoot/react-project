@@ -34,7 +34,7 @@ const Blogs = () => {
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {blogPosts && blogPosts.length > 0 ? (
               blogPosts.map((blog, index) => (
-                <a key={index} href={`/blog/${blog.id}`}>
+                <a key={index} href={`/blogs/${blog.id}`}>
                   <BlogPost
                     key={index}
                     title={blog.title}
