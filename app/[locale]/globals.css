@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 5px; 
+}
+
+.active {
+  /* color: #f78181;
+   */
+   border: 1px solid white;
+   padding: 2px 8px;
+}
+
+.products-scroll {
+  max-height: calc(100vh - 300px);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.loader {
+  width: 35px;
+  aspect-ratio: 1;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0    0,
+    var(--_g) 0    100%,
+    var(--_g) 100% 100%;
+  background-size: 40% 40%;
+  animation:l11 1s infinite linear;
+}
+@keyframes l11 {
+    25% {background-position:100% 0   ,0 100%,100% 100%}
+    50% {background-position:100% 0   ,0 0   ,100% 100%}
+    75% {background-position:100% 0   ,0 0   ,0    100%}
+    100%{background-position:100% 100%,0 0   ,0    100%}
+}
+

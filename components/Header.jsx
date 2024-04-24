@@ -1,16 +1,16 @@
-"use server";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import ToggleMenu from "./ToggleMenu";
+import ToggleMenu from "@/components/ToggleMenu";
 import { logout } from "@/app/actions";
-import LogoutButton from "./LogoutButton";
+import LogoutBtn from "./LogoutBtn";
+import ThemeSwitch from "./ThemeSwitch";
+import LocalSwitcher from "./LocalSwitcher";
 
-const Header = async () => {
+export default function Header() {
+  const t = useTranslations("Header");
   const link = "";
-  const handleLogout = async () => {
-    "use server";
-    await logout();
-  };
+
   return (
     <header className="bg-[#f4edf2] ">
       <div className="px-16 max-[900px]:px-6">
@@ -33,7 +33,7 @@ const Header = async () => {
                   href="/"
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Home
+                  {t("home")}
                 </Link>
               </li>
               <li>
@@ -41,7 +41,7 @@ const Header = async () => {
                   href={link}
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Houseplants
+                  {t("houseplants")}
                 </a>
               </li>
               <li>
@@ -49,7 +49,7 @@ const Header = async () => {
                   href={link}
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Pots
+                  {t("pots")}
                 </a>
               </li>
               <li>
@@ -57,7 +57,7 @@ const Header = async () => {
                   href="/blogs"
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Blogs
+                  {t("blogs")}
                 </Link>
               </li>
               <li>
@@ -65,42 +65,21 @@ const Header = async () => {
                   href="/contact"
                   className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
                 >
-                  Contact
+                  {t("contact")}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
             <ul className="flex items-center justify-between max-[900px]:hidden">
-              <li className="pr-2">
-                <Link
-                  href="/"
-                  className="bg-transparent border-none cursor-pointer px-2"
-                >
-                  <Image
-                    src="/img/cart.png"
-                    alt="Plant Logo"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
-              </li>
-              <li className="pr-2">
-                <Link
-                  href="/profile"
-                  className="bg-transparent border-none cursor-pointer px-2"
-                  linkto
-                >
-                  <Image
-                    src="/img/user.png"
-                    alt="Plant Logo"
-                    width={24}
-                    height={24}
-                  />
-                </Link>
+              <li className="flex">
+                <ThemeSwitch />
               </li>
               <li>
-                <LogoutButton handleLogout={handleLogout} />
+                <LocalSwitcher />
+              </li>
+              <li>
+                <LogoutBtn />
               </li>
             </ul>
           </div>
@@ -108,5 +87,4 @@ const Header = async () => {
       </div>
     </header>
   );
-};
-export default Header;
+}

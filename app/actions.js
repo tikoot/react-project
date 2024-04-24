@@ -1,23 +1,34 @@
-"use server";
-import { AUTH_COOKIE_KEY } from "@/constants";
-import { cookies } from "next/headers";
+// "use server";
 
-export async function login(username, password) {
-  const response = await fetch("https://dummyjson.com/auth/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: username,
-      password: password,
-    }),
-  });
+// import { AUTH_COOKIE } from "@/constants";
+// import { redirect } from "next/navigation";
+// import { cookies } from "next/headers";
 
-  const user = await response.json();
-  const cookieStore = cookies();
-  cookieStore.set(AUTH_COOKIE_KEY, JSON.stringify(user));
-}
+// export async function login(username, password) {
+//   const response = await fetch("https://dummyjson.com/auth/login", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       username,
+//       password,
+//     }),
+//   });
 
-export async function logout() {
-  const cookieStore = cookies();
-  cookieStore.delete(AUTH_COOKIE_KEY);
-}
+//   const data = await response.json();
+//   console.log(data)
+
+//   const token = data.token;
+//   const cookieStore = cookies();
+
+//   if (response.ok) {
+//     cookieStore.set(AUTH_COOKIE, token);
+//     return redirect("/")
+//   }
+// }
+
+// export async function logout() {
+//   const cookieStore = cookies();
+
+//   cookieStore.delete(AUTH_COOKIE);
+//   return redirect("/login");
+// }

@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 
-const Footer = () => {
+export default function Footer() {
+  const t = useTranslations("Footer");
   return (
     <footer className="bg-[#f4edf2]">
       <div className="px-16 max-[900px]:px-6">
@@ -24,19 +26,13 @@ const Footer = () => {
                   href="/"
                   className="mr-5 max-[900px]:mr-0 text-base capitalize font-medium  no-underline text-black max-[900px]:mb-2"
                 >
-                  Overview
+                  {t("terms")}
                 </a>
                 <a
                   href="/"
                   className="mr-5 max-[900px]:mr-0 text-base capitalize font-medium  no-underline text-black max-[900px]:mb-2"
                 >
-                  Privacy Policy
-                </a>
-                <a
-                  href="/"
-                  className="mr-5 max-[900px]:mr-0 text-base capitalize font-medium  no-underline text-black max-[900px]:mb-2"
-                >
-                  Terms & Conditions
+                  {t("policy")}
                 </a>
               </div>
             </div>
@@ -51,7 +47,7 @@ const Footer = () => {
                     type="email"
                     name="EMAIL"
                     id="newsletter-form-email"
-                    placeholder="Your email address ..."
+                    placeholder={t("email")}
                     className="w-full min-w-[250px] px-5 py-[10px] mr-[5px] border border-[#4b3049] text-[#4b3049] rounded-full"
                   />
 
@@ -59,7 +55,7 @@ const Footer = () => {
                     type="submit"
                     className="px-4 py-2 text-[#f4edf2] bg-[#b08ead] rounded-full border-none m-0"
                   >
-                    Subscribe
+                    {t("subscribe")}
                   </button>
                 </form>
               </div>
@@ -69,6 +65,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
