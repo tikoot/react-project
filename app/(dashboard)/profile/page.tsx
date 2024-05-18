@@ -20,9 +20,7 @@ const Profile: React.FC = () => {
                   id="name"
                   name="name"
                   value="tiko"
-                  readonly
                   className="disabled bg-transparent focus:outline-none border-b border-transparent capitalize"
-                  style={{ "caret-color": "transparent" }}
                 />
               </div>
 
@@ -31,9 +29,7 @@ const Profile: React.FC = () => {
                   id="lastname"
                   name="lastname"
                   value="otarashvili"
-                  readonly
                   className="disabled bg-transparent focus:outline-none border-b border-transparent capitalize"
-                  style={{ "caret-color": "transparent" }}
                 />
               </div>
 
@@ -44,7 +40,6 @@ const Profile: React.FC = () => {
                   type="email"
                   value="tinatinotarashvili99@gmail.com"
                   className="disabled bg-transparent focus:outline-none border-b border-transparent w-full"
-                  style={{ "caret-color": "transparent" }}
                 />
               </div>
               <div className="mt-2">
