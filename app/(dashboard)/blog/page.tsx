@@ -3,7 +3,6 @@ import Layout from "../../../components/Layout";
 import BlogCard from "../../../components/BlogCard";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 
 interface Blog {
   id: number;
@@ -13,8 +12,6 @@ interface Blog {
 }
 
 const Blog = () => {
-  const { t } = useTranslation();
-
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
