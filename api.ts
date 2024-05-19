@@ -2,6 +2,7 @@ export interface User {
   id: number;
   name: string;
   email: string;
+  age: number;
 }
 
 export const BASE_URL = "http://localhost:3000";
@@ -13,10 +14,10 @@ export async function getUsers() {
   return users.rows;
 }
 
-export const createUser = async (name: string, email: string) => {
+export const createUser = async (name: string, email: string, age: number) => {
   await fetch(`${BASE_URL}/api/create-user`, {
     method: "POST",
-    body: JSON.stringify({ name, email }),
+    body: JSON.stringify({ name, email, age }),
   });
 };
 
