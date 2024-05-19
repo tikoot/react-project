@@ -26,3 +26,27 @@ export async function deleteUser(id: number) {
     method: "DELETE",
   });
 }
+
+export async function editUser(id: number, userData: User) {
+  try {
+    const response = await fetch(
+      `${process.env.BASE_URL}/api/edit-users/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to update user");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Error updating user:", error);
+    throw error;
+  }
+}

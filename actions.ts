@@ -1,5 +1,5 @@
 "use server";
-import { createUser, deleteUser, getUsers } from "./api";
+import { createUser, deleteUser, getUsers, User, editUser } from "./api";
 export async function createUserAction(formData: FormData) {
   //   const { name, email, age } = Object.fromEntries(formData);
 
@@ -22,4 +22,13 @@ export async function createUserAction(formData: FormData) {
 
 export async function deleteUserAction(id: number) {
   await deleteUser(id);
+}
+
+export async function editUsersAction(id: number, userData: User) {
+  try {
+    await editUser(id, userData);
+  } catch (error) {
+    console.error("Error editing user:", error);
+    throw error;
+  }
 }
