@@ -29,16 +29,13 @@ export async function deleteUser(id: number) {
 
 export async function editUser(id: number, userData: User) {
   try {
-    const response = await fetch(
-      `${process.env.BASE_URL}/api/edit-users/${id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      }
-    );
+    const response = await fetch(`${BASE_URL}/api/edit-users/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
 
     if (!response.ok) {
       throw new Error("Failed to update user");
