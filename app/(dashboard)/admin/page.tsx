@@ -34,29 +34,37 @@ export default function Admin() {
     setIsEditModalOpen(!isEditModalOpen);
   };
 
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   if (editUser) {
-  //     setEditUser({ ...editUser, [name]: value });
-  //   }
-  // };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (editUser) {
+      setEditUser({ ...editUser, [name]: value });
+    }
+  };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (editUser) {
-  //     try {
-  //       await editUsersAction(editUser.id, editUser);
-  //       // onUpdateUser(editUser);
-  //       // setUsersList(updatUser);
-  //       setIsEditModalOpen(false);
-  //     } catch (error) {
-  //       console.error("Error updating user:", error);
-  //     }
-  //   }
-  // };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (editUser) {
+      try {
+        // console.log(editUser, editUser.id);
+        await editUsersAction(editUser.id, editUser);
+        //onUpdateUser(editUser);
+        // setUsersList(updatUser);
+        //setIsEditModalOpen(false);
+      } catch (error) {
+        console.error("Error updating user:", error);
+      }
+    }
+  };
 
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8">
+      <button
+        type="button"
+        onClick={toggleModal}
+        className="block rounded-md px-4 py-2 text-[#f4edf2] bg-[#b08ead] rounded-full border-none m-0 "
+      >
+        Add user
+      </button>
       <div className="mt-8 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -137,7 +145,12 @@ export default function Admin() {
                     <input type="text" name="name" placeholder="Name" />
                     <input type="text" name="email" placeholder="Email" />
                     <input type="text" name="age" placeholder="Age" />
-                    <button type="submit">Create User</button>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 text-[#f4edf2] bg-[#b08ead] rounded-full border-none m-0 "
+                    >
+                      Create User
+                    </button>
                   </form>
                 </div>
               </div>
@@ -145,9 +158,9 @@ export default function Admin() {
                 <button
                   onClick={toggleModal}
                   type="button"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="px-4 py-2"
                 >
-                  Close
+                  X
                 </button>
               </div>
             </div>
@@ -176,11 +189,23 @@ export default function Admin() {
               aria-labelledby="modal-headline"
             >
               <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <h3 className="text-lg font-medium leading-6 text-gray-900">
-                  Edit User
-                </h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                    Edit User
+                  </h3>
+                  <div className="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button
+                      onClick={toggleEditModal}
+                      type="button"
+                      className=" "
+                    >
+                      X
+                    </button>
+                  </div>
+                </div>
+
                 <div className="mt-5">
-                  {/* <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit}>
                     <input
                       type="text"
                       name="name"
@@ -202,18 +227,14 @@ export default function Admin() {
                       value={editUser?.age}
                       onChange={handleInputChange}
                     />
-                    <button type="submit">Save Changes</button>
-                  </form> */}
+                    <button
+                      type="submit"
+                      className="px-4 py-2 text-[#f4edf2] bg-[#b08ead] rounded-full border-none m-0 "
+                    >
+                      Save Changes
+                    </button>
+                  </form>
                 </div>
-              </div>
-              <div className="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button
-                  onClick={toggleEditModal}
-                  type="button"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </div>

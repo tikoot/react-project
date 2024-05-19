@@ -26,6 +26,7 @@ export async function deleteUserAction(id: number) {
 
 export async function editUsersAction(id: number, userData: User) {
   try {
+    //console.log(id, userData);
     await editUser(id, userData);
   } catch (error) {
     console.error("Error editing user:", error);
