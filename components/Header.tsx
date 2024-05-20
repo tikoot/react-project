@@ -88,6 +88,14 @@ const Header: React.FC = () => {
                   {t("contact")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/admin"
+                  className="px-5 py-0 text-base font-medium text-gray-700 capitalize no-underline cursor-pointer"
+                >
+                  admin
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
