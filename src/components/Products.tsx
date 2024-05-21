@@ -58,7 +58,6 @@ const Products = ({ isSorted = false, searchQuery = "" }) => {
                 <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 max-w-6xl">
                   {newCards.map((card) => (
                     <Card
-                      key={card.id}
                       card={card}
                       handleClick={() => addToCartAction(card.id)}
                     />
