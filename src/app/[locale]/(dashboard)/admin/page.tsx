@@ -55,7 +55,7 @@ const AdminPage = async () => {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {users.map((user: User) => (
-                    <tr>
+                    <tr key={user.id}>
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0 dark:text-white">
                         {user.name}
                       </td>
